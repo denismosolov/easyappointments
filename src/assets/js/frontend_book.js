@@ -130,7 +130,7 @@ var FrontendBook = {
 
             FrontendBook.getAvailableHours($('#select-date').val());
             FrontendBook.updateConfirmFrame();
-            FrontendBook.updateServiceDescription($('#select-service').val(), $('#service-description'));
+            //FrontendBook.updateServiceDescription($('#select-service').val(), $('#service-description'));
         });
         
         /**
@@ -438,13 +438,7 @@ var FrontendBook = {
             '<p>' + 
             	EALang['phone'] + ': ' + $('#phone-number').val() + 
             	'<br/>' + 
-            	EALang['email'] + ': ' + $('#email').val() + 
-            	'<br/>' + 
-            	EALang['address'] + ': ' + $('#address').val() + 
-            	'<br/>' + 
-            	EALang['city'] + ': ' + $('#city').val() + 
-            	'<br/>' + 
-            	EALang['zip_code'] + ': ' + $('#zip-code').val() + 
+            	EALang['email'] + ': ' + $('#email').val() +
         	'</p>'
         );
             
@@ -456,17 +450,13 @@ var FrontendBook = {
             'last_name': $('#last-name').val(),
             'first_name': $('#first-name').val(),
             'email': $('#email').val(),
-            'phone_number': $('#phone-number').val(),
-            'address': $('#address').val(),
-            'city': $('#city').val(),
-            'zip_code': $('#zip-code').val()
+            'phone_number': $('#phone-number').val()//,
         };
         
         postData['appointment'] = {
             'start_datetime': $('#select-date').datepicker('getDate').toString('yyyy-MM-dd') 
                                     + ' ' + $('.selected-hour').text() + ':00',
             'end_datetime': FrontendBook.calcEndDatetime(),
-            'notes': $('#notes').val(),
             'is_unavailable': false,
             'id_users_provider': $('#select-provider').val(),
             'id_services': $('#select-service').val()
@@ -539,13 +529,7 @@ var FrontendBook = {
             $('#first-name').val(customer['first_name']);
             $('#email').val(customer['email']);
             $('#phone-number').val(customer['phone_number']);
-            $('#address').val(customer['address']);
-            $('#city').val(customer['city']);
-            $('#zip-code').val(customer['zip_code']);
-            var appointmentNotes = (appointment['notes'] !== null) 
-                    ? appointment['notes'] : '';
-            $('#notes').val(appointmentNotes);
-            
+
             FrontendBook.updateConfirmFrame();
             
             return true;

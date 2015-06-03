@@ -237,7 +237,7 @@
                                 
                                 <select id="select-provider" class="cold-md-4 form-control"></select>
                             </div>
-                            
+
                             <div id="service-description" style="display:none;"></div>
                         </div>
                     </div>
@@ -313,25 +313,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="address" class="control-label"><?php echo $this->lang->line('address'); ?></label>
-                                    <input type="text" id="address" class="form-control" maxlength="250" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="city" class="control-label"><?php echo $this->lang->line('city'); ?></label>
-                                    <input type="text" id="city" class="form-control" maxlength="120" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="zip-code" class="control-label"><?php echo $this->lang->line('zip_code'); ?></label>
-                                    <input type="text" id="zip-code" class="form-control" maxlength="120" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="notes" class="control-label"><?php echo $this->lang->line('notes'); ?></label>
-                                    <textarea id="notes" maxlength="500" class="form-control" rows="3"></textarea>
-                                </div>
-                            </div>
-
                             <em id="form-message" class="text-danger"><?php echo $this->lang->line('fields_are_required'); ?></em>
                         </div>
                     </div>
@@ -380,19 +361,7 @@
                         </form>
                     </div>
                 </div>
-                
-                <?php 
-                    // ------------------------------------------------------
-                    // FRAME FOOTER 
-                    // ------------------------------------------------------ ?>
-                <div id="frame-footer">
-                    Powered By 
-                    <a href="http://easyappointments.org" target="_blank">Easy!Appointments</a>
-                    |
-                    <span id="select-language" class="label label-success">
-    		        	<?php echo ucfirst($this->config->item('language')); ?>
-    		        </span>
-                </div>
+
             </div>
         </div>
     </div>
