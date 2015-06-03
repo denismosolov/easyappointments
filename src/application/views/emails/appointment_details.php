@@ -4,7 +4,7 @@
 </head>
 <body style="font: 13px arial, helvetica, tahoma;">
     <div class="email-container" style="width: 650px; border: 1px solid #eee;">
-        <div id="header" style="background-color: #3DD481; border-bottom: 4px solid #1A865F; 
+        <div id="header" style="background-color: #EB2A2E; border-bottom: 4px solid #B42026;
                 height: 45px; padding: 10px 15px;">
             <strong id="logo" style="color: white; font-size: 20px; 
                     text-shadow: 1px 1px 1px #8F8888; margin-top: 10px; display: inline-block">
@@ -18,11 +18,11 @@
             <h2>Appointment Details</h2>
             <table id="appointment-details">
                 <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">Service</td>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Lesson</td>
                     <td style="padding: 3px;">$appointment_service</td>
                 </tr>
                 <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">Provider</td>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Teacher</td>
                     <td style="padding: 3px;">$appointment_provider</td>
                 </tr>
                 <tr>
@@ -46,24 +46,15 @@
                     <td style="padding: 3px;">$customer_email</td>
                 </tr>
                 <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">Phone</td>
+                    <td class="label" style="padding: 3px;font-weight: bold;">Skype</td>
                     <td style="padding: 3px;">$customer_phone</td>
                 </tr>
-                <tr>
-                    <td class="label" style="padding: 3px;font-weight: bold;">Address</td>
-                    <td style="padding: 3px;">$customer_address</td>
-                </tr>
             </table>
-            
-            <h2>Appointment Link</h2>
-            <a href="$appointment_link" style="width: 600px;">$appointment_link</a>
+
         </div>
 
-        <div id="footer" style="padding: 10px; text-align: center; margin-top: 10px;         
+        <div id="footer" style="padding: 10px; text-align: center; margin-top: 10px;
                 border-top: 1px solid #EEE; background: #FAFAFA;">
-            Powered by 
-            <a href="http://easyappointments.org" style="text-decoration: none;">Easy!Appointments</a> 
-            | 
             <a href="$company_link" style="text-decoration: none;">$company_name</a>
         </div>
     </div>
