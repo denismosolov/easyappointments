@@ -415,11 +415,8 @@ var FrontendBook = {
         }
 
         var selServiceId = $('#select-service').val();
-        var servicePrice, serviceCurrency;
         $.each(GlobalVariables.availableServices, function(index, service) {
             if (service.id == selServiceId) {
-                servicePrice = '<br>' + service.price;
-                serviceCurrency = service.currency;
                 return false; // break loop
             }
         });
@@ -430,7 +427,7 @@ var FrontendBook = {
         		+ '<strong class="text-info">' 
                     + $('#select-provider option:selected').text() + '<br>'
         			+ selectedDate + ' ' +  $('.selected-hour').text() 
-                    + servicePrice + ' ' + serviceCurrency
+                    //+ servicePrice + ' ' + serviceCurrency
     			+ '</strong>' + 
             '</p>'
         );
@@ -582,11 +579,7 @@ var FrontendBook = {
                     html += '[' + EALang['duration'] + ' ' + service.duration 
                             + ' ' + EALang['minutes'] + '] ';
                 }
-                
-                if (service.price != '' && service.price != null) {
-                    html += '[' + EALang['price'] + ' ' + service.price + ' ' + service.currency  + ']';
-                }   
-                
+
                 html += '<br>';
                 
                 return false;

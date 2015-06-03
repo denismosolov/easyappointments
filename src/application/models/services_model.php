@@ -55,13 +55,12 @@ class Services_Model extends CI_Model {
     /**
      * Checks whether an service record already exists in the database.
      * 
-     * @param array $service Contains the service data. Name, duration and price values 
+     * @param array $service Contains the service data. Name, duration values
      * are mandatory in order to perform the checks.
      */
     public function exists($service) {
-        if (!isset($service['name']) 
-                || !isset($service['duration']) 
-                || !isset($service['price'])) {
+        if (!isset($service['name'])
+                || !isset($service['duration'])) {
             throw new Exception('Not all service fields are provided in order to check whether '
                     . 'a service record already exists: ' . print_r($service, TRUE));
         }
@@ -69,7 +68,6 @@ class Services_Model extends CI_Model {
         $num_rows = $this->db->get_where('ea_services', array(
             'name' => $service['name'],
             'duration' => $service['duration'],
-            'price' => $service['price']
         ))->num_rows();
         
         return ($num_rows > 0) ? TRUE : FALSE;
@@ -116,12 +114,6 @@ class Services_Model extends CI_Model {
             }
         }
 
-        if ($service['price'] !== NULL) {
-            if (!is_numeric($service['price'])) {
-                throw new Exception('Service price is not numeric.');
-            }
-        }
-
         return TRUE;
     }
     
@@ -130,13 +122,12 @@ class Services_Model extends CI_Model {
      * 
      * NOTICE! The record must exist, otherwise an exeption will be raised.
      * 
-     * @param array $service Contains the service record data. Name, duration and price values
+     * @param array $service Contains the service record data. Name, duration values
      * are mandatory for this method to complete.
      */
     public function find_record_id($service) {
         if (!isset($service['name'])
-                || !isset($service['duration'])
-                || !isset($service['price'])) {
+                || !isset($service['duration'])) {
             throw new Exception('Not all required fields where provided in order to find the '
                     . 'service record id.');
         }
@@ -144,7 +135,6 @@ class Services_Model extends CI_Model {
         $result = $this->db->get_where('ea_services', array(
             'name' => $service['name'],
             'duration' => $service['duration'],
-            'price' => $service['price']
         ));
         
         if ($result->num_rows() == 0) {
